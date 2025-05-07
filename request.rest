@@ -1,27 +1,38 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/users/14
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFzZCIsImVtYWlsIjoidGVzQHRlcy5jb20iLCJnZW5kZXIiOiJNYWxlIiwiY3JlYXRlZEF0IjoiMjAyNS0wNS0wNFQxNzo0Nzo0OS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0wN1QwNzo1OTo1NS4wMDBaIiwiaWF0IjoxNzQ2NjA0NzcyLCJleHAiOjE3NDY2MDQ4MDJ9.XMX34BhE1t-ECnxsmFi2s-HvB8-b2t8rETBJ7EJFhbo
+###
+
+
+POST http://localhost:5000/add-user
+Content-Type: application/json
+
+{
+"name": "tes", "email": "tes@tes.com", "gender": "Male", "password": "12345"
+}
 
 ###
 
-POST http://localhost:5000/add-user 
+PUT http://localhost:5000/edit-user/14 
 Content-Type: application/json
 
 {
-    "name": "tes",
-    "email": "tes@tes.com",
-    "gender": "Male"
-}
-
-### 
-
-PUT http://localhost:5000/edit-user/14
-Content-Type: application/json
-
-{
-    "name": "tessss",
-    "email": "tesss@tessss.com",
-    "gender": "Male"
+"name": "tessss", "email": "tesss@tessss.com", "gender": "Male"
 }
 
 ###
 
 DELETE http://localhost:5000/delete-user/17
+
+###
+
+POST http://localhost:5000/login 
+Content-Type: application/json
+
+{
+
+"email": "tes@tes.com", "password": "12345"
+}
+
+###
+
+DELETE http://localhost:5000/logout
